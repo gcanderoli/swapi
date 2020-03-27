@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/_fonts.scss';
+@import 'assets/animated-background';
+
+$atures_font: 'Atures300';
+$jedi_font: 'Star Jedi';
+
+body{
+
+background-color: black;
+font-family: $atures_font;
+color: white;
+
+h1{
+  font-family: $jedi_font;
+  text-shadow: -2px 0 yellow, 0 2px yellow, 2px 0 yellow, 0 -2px yellow;
+  color: black;
+}
+
+}

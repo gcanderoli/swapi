@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center">Film characters!</h1>
+
+    <div *ngIf="charactersList.length > 0">
+      <p>Filter by eye color</p>
+      <button class="btn btn-filter" *ngFor="let color of eyeColor" (click)="filterBy(color)">{{ color }}</button>
+
+      <p>Filter by gender</p>
+      <button class="btn btn-filter" *ngFor="let gender of genderArray" (click)="filterBy(gender)">{{ gender }}</button>
+
+      <div class="row">
+        <div class="col-6" *ngFor="let character of charactersList">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ character.name }}</h5>
+              <p class="card-text">Eye color: {{ character.eye_color }}</p>
+              <p class="card-text">Gender: {{ character.gender }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li *ngFor="let page of pagination; let i = index" class="page-item" (click)="paginate(i, 10, currentList)">
+            <a class="page-link" [routerLink]="">{{ page + 1 }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-filter d-block mx-auto" (click)="paginate(0, 10, charactersData)">RESET</button>
+    </div>
+  </div>
+</div>

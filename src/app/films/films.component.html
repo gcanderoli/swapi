@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center">Star wars films!</h1>
+    <div *ngIf="filmsData">
+      <!-- <ul class="list-group" *ngFor="let film of filmsData">
+        <li class="list-group-item">{{ film.title }}</li>
+        <li class="list-group-item">{{ film.episode_id }}</li>
+        <li class="list-group-item">{{ film.director }}</li>
+        <li class="list-group-item" [routerLink]="['/film-characters', film.episode_id]">show characters</li>
+      </ul> -->
+
+      <div class="row">
+        <div class="col-6" *ngFor="let film of filmsData">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ film.title }}</h5>
+              <p class="card-text">Episode: {{ film.episode_id }}</p>
+              <p class="card-text">Director: {{ film.director }}</p>
+              <a class="btn btn-link" [routerLink]="['/film-characters', film.episode_id]">show characters</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
